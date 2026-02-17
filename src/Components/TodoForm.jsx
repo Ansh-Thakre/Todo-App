@@ -19,21 +19,21 @@ const TodoForm = ({ addTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-3">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col sm:flex-row gap-3 w-full"
+    >
       <input
         type="text"
         placeholder="Enter a new task..."
         value={text}
         onChange={(e) => setText(e.target.value)}
-        // Controlled input ensures React is the single source of truth
-
-        className="flex-1 p-2 rounded bg-gray-700 text-gray-200 focus:outline-none"
+        className="flex-1 p-3 rounded bg-gray-700 text-gray-200 focus:outline-none w-full"
       />
 
       <button
         type="submit"
-        className="bg-blue-600 px-4 py-2 rounded hover:bg-blue-700 transition"
-        // Using type="submit" allows Enter key submission (better accessibility)
+        className="bg-blue-600 px-4 py-3 rounded hover:bg-blue-700 transition w-full sm:w-auto"
       >
         Add
       </button>
